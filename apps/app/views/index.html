@@ -1,0 +1,15 @@
+<import: src='./emailchangeconfirmed'>
+<import: src='./home'>
+<import: src='./registrationconfirmed'>
+
+<Title:>
+  {{_page.title}}
+
+<Body:>
+  <view name="header"/>
+  <view name="{{$render.ns}}"/>
+
+<header:>
+  <h1>App</h1>
+  <p>{{if _session.loggedIn}}loggedIn{{else}}notLoggedIn{{/}}</p>
+  <br>

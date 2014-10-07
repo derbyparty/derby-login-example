@@ -1,0 +1,12 @@
+{
+  "generator-derby": {
+    "app": "derby login example",
+    "coffee": false,
+    "stylus": true,
+    "jade": false,
+    "project": "derby login example",
+    "apps": [
+      "app"
+    ]
+  }
+}

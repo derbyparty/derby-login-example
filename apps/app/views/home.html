@@ -1,0 +1,63 @@
+<index:>
+  <div class='row'>
+    <div class='col-sm-2 col-sm-offset-1'>
+      <p>UserId: {{_session.userId}}</p>
+      {{if _session.user.email}}
+        <p>Email: {{_session.user.email}}</p>
+      {{/}}
+      <p><a href='/auth/logout' class='btn btn-primary btn-block'>Logout with Link</a></p>
+      <p><view name='auth:logout' text='Logout with Ajax' /></p>
+    </div>
+    <div class='col-sm-2 col-sm-offset-1'>
+      {{if _session.user.email}}
+        <p>Change password:</p>
+        <view name='auth:changepassword' on-success='passwordChanged()' />
+        <br>
+        <p>Change email:</p>
+        <view name='auth:changeemail' on-success='emailChanged()' />
+      {{/}}
+    </div>
+    <div class='col-sm-2 col-sm-offset-1'>
+      <p>OAuth providers:</p>
+      <p>
+        Github:&nbsp;
+        {{if _session.user.github}}
+          <a href='{{_session.user.github.profileUrl}}' target='_blank'>{{_session.user.github.username}}</a>
+        {{else}}
+          <a href='/auth/github'>Register</a>
+        {{/}}
+      </p>
+      <p>
+        Google:&nbsp;
+        {{if _session.user.google}}
+          <a href='https://plus.google.com/{{_session.user.google.id}}' target='_blank'>{{_session.user.google.displayName}}</a>
+        {{else}}
+          <a href='/auth/google'>Register</a>
+        {{/}}
+      </p>
+      <p>
+        Twitter:&nbsp;
+        {{if _session.user.twitter}}
+          <a href='https://twitter.com/{{_session.user.twitter.username}}' target='_blank'>{{_session.user.twitter.displayName}}</a>
+        {{else}}
+          <a href='/auth/twitter'>Register</a>
+        {{/}}
+      </p>
+      <p>
+        Facebook:&nbsp;
+        {{if _session.user.facebook}}
+          <a href='{{_session.user.facebook.profileUrl}}' target='_blank'>{{_session.user.facebook.displayName}}</a>
+        {{else}}
+          <a href='/auth/facebook'>Register</a>
+        {{/}}
+      </p>
+      <p>
+        Vkontakte:&nbsp;
+        {{if _session.user.vkontakte}}
+          <a href='{{_session.user.vkontakte.profileUrl}}' target='_blank'>{{_session.user.vkontakte.displayName}}</a>
+        {{else}}
+          <a href='/auth/vkontakte'>Register</a>
+        {{/}}
+      </p>
+    </div>
+  </div>

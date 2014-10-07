@@ -1,0 +1,20 @@
+<index:>
+  <div class='row'>
+    <div class='col-sm-2 col-sm-offset-1'>
+      <view name='auth:login' />
+      <br>
+      <p>Forgot password?</p>
+      <view name='auth:recoverpassword' on-success='recoveryEmailSent()' />
+    </div>
+    <div class='col-sm-2 col-sm-offset-1'>
+      <view name='auth:register' />
+    </div>
+    <div class='col-sm-2 col-sm-offset-1'>
+      <p>Login or Register with providers:</p>
+      <p><a href='/auth/github'>Github</a></p>
+      <p><a href='/auth/google'>Google</a></p>
+      <p><a href='/auth/twitter'>Twitter</a></p>
+      <p><a href='/auth/facebook'>Facebook</a></p>
+      <p><a href='/auth/vkontakte'>Vkontakte</a></p>
+    </div>
+  </div>
