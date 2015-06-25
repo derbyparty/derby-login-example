@@ -3,12 +3,12 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'derbylogin@gmail.com',
+        user: 'loginmederby@gmail.com',
         pass: 'derbyrulez'
     }
 });
 
-var from = 'Derby-login Example ✔ <derbylogin@gmail.com>';
+var from = 'Derby-login Example ✔ <loginmederby@gmail.com>';
 
 module.exports = {
   collection: 'auths',
@@ -85,7 +85,7 @@ module.exports = {
           done(err);
       });
     },
-    sendRegistrationConfirmation: function(userId, email, done) {
+    sendRegistrationConfirmation: function(userId, email, password, userData, done) {
       var mailOptions = {
           from: from,
           to: email,
